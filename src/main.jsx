@@ -10,7 +10,7 @@ import "./styles/layout.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <BrowserRouter basename="/PROJECT_HARMONICS">
+        <BrowserRouter basename="/PROJECT_HARMONIX">
             <App />
         </BrowserRouter>
     </React.StrictMode>

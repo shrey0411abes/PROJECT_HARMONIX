@@ -1,6 +1,14 @@
 :root {
-    --primary-color: #6c63ff;
-    --background-color: #121212;
-    --sidebar-color: #181818;
-    --text-color: #ffffff;
+  --primary: #6c63ff;
+  --secondary: #8b5cf6;
+
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+
+  --accent: #22d3ee;
+
+  /* Missing Variables */
+  --background-color: #0f172a;
+  --sidebar-color: #111827;
+  --text-color: #ffffff;
 }

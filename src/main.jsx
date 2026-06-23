@@ -4,14 +4,18 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 
-import "./styles/global.css";
-import "./styles/variables.css";
-import "./styles/layout.css";
+import FavoritesProvider from "./context/FavoritesContext";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <BrowserRouter basename="/PROJECT_HARMONIX">
-            <App />
-        </BrowserRouter>
-    </React.StrictMode>
+// import "./index.css";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <React.StrictMode>
+    <BrowserRouter basename="/PROJECT_HARMONIX">
+      <FavoritesProvider>
+        <App />
+      </FavoritesProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

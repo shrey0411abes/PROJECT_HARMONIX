@@ -1,33 +1,46 @@
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import Sidebar from "./components/Sidebar/Sidebar";
 import Navbar from "./components/Navbar/Navbar";
 import Player from "./components/Player/Player";
 
-import routes from "./routes";
+import AppRoutes from "./routes";
+
+import songs from "./data/songs";
+
+import "./styles/layout.css";
+import "./styles/global.css";
+import "./styles/variables.css";
 
 function App() {
-    return (
-        <div className="app-container">
-            <Sidebar />
+  const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-            <div className="main-content">
-                <Navbar />
+  return (
+    <div className="app-container">
+      <Sidebar />
 
-                <Routes>
-                    {routes.map((route) => (
-                        <Route
-                            key={route.path}
-                            path={route.path}
-                            element={route.element}
-                        />
-                    ))}
-                </Routes>
-            </div>
+      <div className="content-wrapper">
+        <Navbar 
+         searchTerm={searchTerm}
+         setSearchTerm={setSearchTerm}
+        />
 
-            <Player />
-        </div>
-    );
+        <main className="main-content">
+          <AppRoutes
+            setCurrentSong={setCurrentSong}
+            searchTerm={searchTerm}
+          />
+        </main>
+
+        <Player
+          currentSong={currentSong}
+          setCurrentSong={setCurrentSong}
+          songs={songs}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default App;

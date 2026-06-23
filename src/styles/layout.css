@@ -54,3 +54,59 @@
     padding: 0.75rem 1rem;
     cursor: pointer;
 }
+
+.home-page {
+  padding: 30px;
+}
+
+.home-page h1 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.home-page h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 20px;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--bg-dark);
+}
+
+.home-page p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.content-wrapper {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+
+  overflow-y: auto;
+}

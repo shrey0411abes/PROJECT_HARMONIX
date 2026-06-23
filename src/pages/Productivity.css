@@ -1,0 +1,125 @@
+.productivity-page {
+  padding: 30px;
+  color: white;
+}
+
+.timer-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.timer {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.timer-card button {
+  margin: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+
+.analytics-section {
+  margin-top: 30px;
+}
+
+.xp-section {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 30px;
+}
+
+.xp-section h2,
+.analytics-section h2 {
+  margin-bottom: 20px;
+}
+
+.xp-bar {
+  width: 100%;
+  height: 15px;
+  background: #334155;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.xp-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* =========================
+   PHASE 3
+========================= */
+
+.tree-display {
+  text-align: center;
+  padding: 20px;
+}
+
+.tree-emoji {
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+
+.tree-display h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.tree-display p {
+  color: #94a3b8;
+}
+
+.mission-card,
+.coach-card,
+.music-card {
+  background: #334155;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 15px;
+  color: white;
+}
+
+.music-card h3 {
+  margin-bottom: 10px;
+}
+
+.mission-card:hover,
+.coach-card:hover,
+.music-card:hover,
+.stat-card:hover {
+  transform: translateY(-3px);
+  transition: 0.3s ease;
+}

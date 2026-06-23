@@ -1,25 +1,48 @@
+import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
+import {
+  FaHome,
+  FaCompass,
+  FaHeart,
+  FaBook,
+  FaLightbulb,
+} from "react-icons/fa";
 
 function Sidebar() {
-    return (
-        <aside className="sidebar">
-            <h2>HarmoniX</h2>
+  return (
+    <aside className="sidebar">
+      <div className="logo">
+        <h2>Harmonix</h2>
+      </div>
 
-            <nav>
-                <NavLink to="/">Home</NavLink>
+      <nav className="sidebar-nav">
+        <NavLink to="/" className="nav-item">
+          <FaHome />
+          <span>Home</span>
+        </NavLink>
 
-                <NavLink to="/explore">Explore</NavLink>
+        <NavLink to="/explore" className="nav-item">
+          <FaCompass />
+          <span>Explore</span>
+        </NavLink>
 
-                <NavLink to="/library">Library</NavLink>
+        <NavLink to="/favorites" className="nav-item">
+          <FaHeart />
+          <span>Favorites</span>
+        </NavLink>
 
-                <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/library" className="nav-item">
+          <FaBook />
+          <span>Library</span>
+        </NavLink>
 
-                <NavLink to="/productivity">
-                    Productivity
-                </NavLink>
-            </nav>
-        </aside>
-    );
+        <NavLink to="/productivity" className="nav-item">
+          <FaLightbulb />
+          <span>Productivity</span>
+        </NavLink>
+      </nav>
+    </aside>
+  );
 }
 
 export default Sidebar;

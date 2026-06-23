@@ -1,30 +1,35 @@
+import { Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
-import Library from "./pages/Library";
 import Favorites from "./pages/Favorites";
+import Library from "./pages/Library";
 import Productivity from "./pages/Productivity";
 
-const routes = [
-    {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "/explore",
-        element: <Explore />,
-    },
-    {
-        path: "/library",
-        element: <Library />,
-    },
-    {
-        path: "/favorites",
-        element: <Favorites />,
-    },
-    {
-        path: "/productivity",
-        element: <Productivity />,
-    },
-];
+function AppRoutes({ setCurrentSong , searchTerm, }) {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={<Home setCurrentSong={setCurrentSong}
+                       searchTerm = {searchTerm} />}
+      />
 
-export default routes;
+      <Route path="/explore" element={<Explore />} />
+      <Route path="/favorites" element={<Favorites />} />
+
+      <Route
+  path="/library"
+  element={
+    <Library
+      setCurrentSong={setCurrentSong}
+    />
+  }
+/>
+
+      <Route path="/productivity" element={<Productivity />} />
+    </Routes>
+  );
+}
+
+export default AppRoutes;

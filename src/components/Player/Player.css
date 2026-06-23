@@ -1,0 +1,114 @@
+.player {
+  height: 90px;
+
+  background-color: var(--card-bg);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 30px;
+}
+
+.player-song-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.player-cover {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 12px;
+
+  object-fit: cover;
+}
+
+.player-song-info h4 {
+  color: white;
+}
+
+.player-song-info p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.control-btn,
+.play-btn {
+  border: none;
+  cursor: pointer;
+
+  color: white;
+
+  background: transparent;
+
+  font-size: 1.2rem;
+}
+
+.play-btn {
+  background-color: var(--primary);
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+}
+
+.volume-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
+}
+
+.volume-slider {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .player {
+    flex-direction: column;
+
+    height: auto;
+
+    padding: 20px;
+
+    gap: 20px;
+  }
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  font-size: 0.85rem;
+}
+
+.progress-bar {
+  width: 300px;
+  cursor: pointer;
+}

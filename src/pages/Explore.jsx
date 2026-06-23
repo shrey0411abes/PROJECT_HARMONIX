@@ -1,10 +1,9 @@
 function Explore() {
-    return (
-        <div>
-            <h1>Explore</h1>
-            <p>Discover new music.</p>
-        </div>
-    );
+  return (
+    <div className="home-page">
+      <h1>Explore Music 🎵</h1>
+    </div>
+  );
 }
 
 export default Explore;

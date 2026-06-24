@@ -112,3 +112,26 @@
   width: 300px;
   cursor: pointer;
 }
+
+.player {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 -5px 30px
+    rgba(
+      124,
+      58,
+      237,
+      0.2
+    );
+}
+
+.player-cover {
+  transition: 0.3s ease;
+}
+
+.player-cover:hover {
+  transform: rotate(4deg)
+    scale(1.08);
+}

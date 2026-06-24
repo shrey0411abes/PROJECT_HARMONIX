@@ -1,4 +1,5 @@
 import "./SongCard.css";
+import { motion } from "framer-motion";
 
 import { useContext } from "react";
 import { FavoritesContext } from "../../context/FavoritesContext";
@@ -13,10 +14,20 @@ function SongCard({ song, setCurrentSong }) {
     favorites.includes(song.id);
 
   return (
-    <div
-      className="song-card"
-      onClick={() => setCurrentSong(song)}
-    >
+   <motion.div
+  className="song-card"
+  whileHover={{
+    scale: 1.03,
+    y: -5,
+  }}
+  whileTap={{
+    scale: 0.97,
+  }}
+  transition={{
+    duration: 0.5,
+  }}
+  onClick={() => setCurrentSong(song)}
+>
       <img
         src={song.cover}
         alt={song.title}
@@ -38,7 +49,7 @@ function SongCard({ song, setCurrentSong }) {
           {isFavorite ? "❤️" : "🤍"}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

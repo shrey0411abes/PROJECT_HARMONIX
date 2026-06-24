@@ -5,7 +5,23 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 
+import {
+  useContext
+} from "react";
+
+import {
+  ThemeContext
+} from "../../context/ThemeContext";
+
 function Navbar({searchTerm , setSearchTerm ,}) {
+
+  const {
+  theme,
+  toggleTheme,
+} = useContext(
+  ThemeContext
+);
+
   return (
     <header className="navbar">
       <div className="search-container">
@@ -22,6 +38,14 @@ function Navbar({searchTerm , setSearchTerm ,}) {
       </div>
 
       <div className="navbar-right">
+        <button
+  className="theme-btn"
+  onClick={toggleTheme}
+>
+  {theme === "dark"
+    ? "☀️"
+    : "🌙"}
+</button>
         <button className="notification-btn">
           <FaBell />
         </button>
@@ -29,7 +53,15 @@ function Navbar({searchTerm , setSearchTerm ,}) {
         <div className="profile-section">
           <FaUserCircle className="profile-icon" />
 
-          <span>Shrey</span>
+          <div className="user-info">
+  <span className="user-name">
+    Shrey
+  </span>
+
+  <span className="user-role">
+    Premium User
+  </span>
+</div>
         </div>
       </div>
     </header>

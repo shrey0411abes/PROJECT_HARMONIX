@@ -3,6 +3,7 @@ import { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Navbar from "./components/Navbar/Navbar";
 import Player from "./components/Player/Player";
+import Explore from "./pages/Explore";
 
 import AppRoutes from "./routes";
 

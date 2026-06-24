@@ -1,4 +1,5 @@
 import "./Player.css";
+import Visualizer from "../Visualizer/Visualizer";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -184,6 +185,10 @@ function Player({
         <div>
           <h4>{currentSong.title}</h4>
           <p>{currentSong.artist}</p>
+
+           <Visualizer
+      isPlaying={isPlaying}
+    />
         </div>
       </div>
 

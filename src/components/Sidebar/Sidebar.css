@@ -36,3 +36,34 @@
   background-color: var(--primary);
   color: white;
 }
+
+.nav-item {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 4px;
+
+  height: 100%;
+
+  background: #7c3aed;
+
+  transform: scaleY(0);
+
+  transition: 0.3s;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+  transform: scaleY(1);
+}

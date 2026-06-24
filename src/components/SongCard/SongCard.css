@@ -1,44 +1,160 @@
 .song-card {
-  background-color: var(--card-bg);
-  border-radius: 16px;
+  position: relative;
+
+  background: rgba(30, 41, 59, 0.78);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
   padding: 16px;
+
+  overflow: hidden;
+
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(124, 58, 237, 0.1);
 }
 
-.song-card:hover {
-  transform: translateY(-5px);
-  background-color: #334155;
+/* Glow Layer */
+
+.song-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -50%;
+  left: -50%;
+
+  width: 200%;
+  height: 200%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.12) 0%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  transition: all 0.4s ease;
 }
+
+/* Hover Effect */
+
+.song-card:hover {
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(124, 58, 237, 0.35);
+}
+
+.song-card:hover::before {
+  opacity: 1;
+}
+
+/* Cover Image */
 
 .song-cover {
   width: 100%;
-  height: 180px;
+
+  height: 190px;
+
   object-fit: cover;
-  border-radius: 12px;
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
+.song-card:hover .song-cover {
+  transform: scale(1.06);
+
+  filter: brightness(1.08);
+}
+
+/* Song Info */
+
 .song-info {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .song-info h3 {
-  color: white;
+  color: var(--text-color);
+
+  font-size: 1.05rem;
+
+  font-weight: 700;
+
   margin-bottom: 6px;
+
+  letter-spacing: 0.3px;
 }
 
 .song-info p {
   color: #94a3b8;
+
+  font-size: 0.92rem;
+
+  margin-bottom: 8px;
 }
 
-.favorite-btn {
-  margin-top: 8px;
+/* Favorite Button */
 
+.favorite-btn {
   border: none;
 
   background: transparent;
 
   cursor: pointer;
 
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+
+  padding: 4px;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.25);
+
+  filter: drop-shadow(
+    0 0 10px rgba(255, 0, 102, 0.6)
+  );
+}
+
+.favorite-btn:active {
+  transform: scale(0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .song-cover {
+    height: 160px;
+  }
+
+  .song-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .song-info p {
+    font-size: 0.85rem;
+  }
 }
